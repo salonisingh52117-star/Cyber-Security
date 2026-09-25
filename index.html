@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberShield - Cyber Incident Reporting Portal</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    
+    <header>
+    
+        <div class="logo">
+            <strong>
+            <span>Cyber</span>Shield
+            </strong>
+        </div>
+
+        <nav>
+           <strong>
+            <a href="#home">Home</a>
+
+            <a href="#features">Features</a>
+
+            <a href="#incidents">Incidents</a>
+
+            <a href="#threat-checker">
+                Threat Checker
+            </a>
+
+            <a href="#report">Report</a>
+
+            <a href="#my-reports">
+                My Reports
+            </a>
+        </strong>
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="pages/login.html"
+               class="login-btn">
+             <strong>
+             <button> Login/Sign Up</button>  
+             </strong>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h3>Secure Campus Initiative</h3>  
+            
+
+            <h1>
+
+                Protect Your Campus.<br>
+                Report Cyber Incidents.
+                
+
+            </h1>
+
+            <p>
+
+                A secure and centralized platform
+                for students and staff to report
+                cybersecurity incidents and help
+                create a safer digital campus.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-btn">
+
+                    Report an Incident
+
+                </button>
+      
+                <button
+                    class="secondary-btn">
+
+                    Learn More
+
+                </button>
+
+            </div>
+
+            <div class="trust-text">
+             <br>
+                Confidential Reporting
+                  |
+                Quick Response
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SECURITY STATUS ================= -->
+
+    <div class="security-status">
+
+        <div class="status-content">
+
+            <div class="status-indicator"></div>
+
+            <div>
+
+                <h3>
+                    Security Status: Operational
+                </h3>
+
+                <p>
+                    Campus security reporting system
+                    is currently available.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="security-time">
+
+            System Active
+
+        </div>
+
+    </div>
+
+
+    
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="section" id="features">
+
+        <h2>
+            Why Choose CyberShield?
+        </h2>
+
+        <p class="section-subtitle">
+
+            Everything you need to report
+            and manage cybersecurity incidents.
+
+        </p>
+
+
+        <div class="feature-container">
+
+
+            <div class="card">
+
+                <h3>
+                    Easy Reporting
+                </h3>
+
+                <p>
+
+                    Report incidents quickly using
+                    a simple and user-friendly form.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Secure & Confidential
+                </h3>
+
+                <p>
+
+                    Your information should be handled
+                    confidentially and accessed only
+                    by authorized personnel.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Track Progress
+                </h3>
+
+                <p>
+
+                    Monitor your incident status
+                    from submission to resolution.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INCIDENT TYPES ================= -->
+
+    <section class="section"
+             id="incidents">
+
+        <h2>
+            Common Incident Types
+        </h2>
+
+        <p class="section-subtitle">
+
+            Select an incident type before
+            submitting your report.
+
+        </p>
+
+
+        <div class="incident-grid">
+
+
+            <div class="incident-card">
+
+                <h3>
+                    Phishing
+                </h3>
+
+                <p>
+                    Suspicious emails or messages
+                    trying to steal information.
+                </p>
+
+            </div>
+
+
+            <div class="incident-card">
+
+                <h3>
+                    Malware
+                </h3>
+
+                <p>
+                    Suspicious software or files
+                    that may harm a device.
+                </p>
+
+            </div>
+
+
+            <div class="incident-card">
+
+                <h3>
+                    Account Hack
+                </h3>
+
+                <p>
+                    Unauthorized access to a
+                    student or staff account.
+                </p>
+
+            </div>
+
+
+            <div class="incident-card">
+
+                <h3>
+                    Suspicious Link
+                </h3>
+
+                <p>
+                    A website link that appears
+                    unsafe or fraudulent.
+                </p>
+
+            </div>
+
+
+            <div class="incident-card">
+
+                <h3>
+                    Data Leakage
+                </h3>
+
+                <p>
+                    Unauthorized exposure or
+                    sharing of sensitive information.
+                </p>
+
+            </div>
+
+
+            <div class="incident-card">
+
+                <h3>
+                    Unauthorized Access
+                </h3>
+
+                <p>
+                    Someone accessing a system
+                    without permission.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= THREAT CHECKER ================= -->
+
+    <section class="section threat-checker"
+             id="threat-checker">
+
+        <h2>
+            Cyber Threat Checker
+        </h2>
+
+        <p class="section-subtitle">
+
+            Check suspicious links and emails
+            for common cybersecurity warning signs.
+
+        </p>
+
+
+        <div class="checker-container">
+
+
+            <!-- LINK CHECKER -->
+
+            <div class="checker-card">
+
+                <h3>
+                    Suspicious Link Checker
+                </h3>
+
+                <p>
+
+                    Enter a suspicious website URL
+                    to check for common warning signs.
+
+                </p>
+
+                <input
+                    type="text"
+                    id="urlInput"
+                    placeholder="https://example.com">
+
+
+                <button
+                    class="primary-btn">
+
+                    Analyze Link
+
+                </button>
+
+
+                <div id="urlResult"
+                     class="checker-result">
+
+                </div>
+
+            </div>
+
+
+            <!-- EMAIL CHECKER -->
+
+            <div class="checker-card">
+
+                <h3>
+                    Suspicious Email Checker
+                </h3>
+
+                <p>
+
+                    Check an email for common
+                    phishing indicators.
+
+                </p>
+
+
+                <input
+                    type="email"
+                    id="senderEmail"
+                    placeholder="Sender email">
+
+
+                <input
+                    type="text"
+                    id="emailSubject"
+                    placeholder="Email subject">
+
+
+                <textarea
+                    id="emailContent"
+                    rows="5"
+                    placeholder="Paste the email message here..."></textarea>
+
+
+                <button
+                    class="primary-btn"
+                    >
+
+                    Analyze Email
+
+                </button>
+
+
+                <div id="emailResult"
+                     class="checker-result">
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REPORT FORM ================= -->
+
+    <section class="report-section"
+             id="report">
+
+        <div class="report-container">
+
+            <h2>
+                Report a Cyber Incident
+            </h2>
+
+            <p class="report-description">
+
+                Provide accurate information so
+                the security team can investigate
+                the incident.
+
+            </p>
+
+
+            <form id="incidentForm">
+
+
+                <!-- INCIDENT TYPE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Incident Type *
+                    </label>
+
+                    <select id="incidentType"
+                            required>
+
+                        <option value="">
+                            Select Incident Type
+                        </option>
+
+                        <option>
+                            Phishing
+                        </option>
+
+                        <option>
+                            Malware
+                        </option>
+
+                        <option>
+                            Suspicious Link
+                        </option>
+
+                        <option>
+                            Account Hack
+                        </option>
+
+                        <option>
+                            Data Leakage
+                        </option>
+
+                        <option>
+                            Unauthorized Access
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label>
+                        Incident Description *
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="6"
+                        placeholder="Describe what happened..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- DATE + TIME -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Date *
+                        </label>
+
+                        <input
+                            type="date"
+                            id="incidentDate"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Time *
+                        </label>
+
+                        <input
+                            type="time"
+                            id="incidentTime"
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="form-group">
+
+                    <label>
+                        Location *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Computer Lab / Library / Hostel"
+                        required>
+
+                </div>
+
+
+                <!-- SEVERITY -->
+
+                <div class="form-group">
+
+                    <label>
+                        Severity *
+                    </label>
+
+                    <div class="severity-options">
+
+
+                        <label class="severity-option">
+
+                            <input
+                                type="radio"
+                                name="severity"
+                                value="Low"
+                                required>
+
+                            Low
+
+                        </label>
+
+
+                        <label class="severity-option">
+
+                            <input
+                                type="radio"
+                                name="severity"
+                                value="Medium">
+
+                            Medium
+
+                        </label>
+
+
+                        <label class="severity-option">
+
+                            <input
+                                type="radio"
+                                name="severity"
+                                value="High">
+
+                            High
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVIDENCE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Evidence / Screenshot
+                    </label>
+
+
+                    <label class="upload-box">
+
+                        
+
+                        <input
+                            type="file"
+                            id="evidence"
+                            accept="image/*,.pdf,.txt,.doc,.docx">
+
+
+                        <div class="file-name"
+                             id="fileName">
+
+                            No file selected
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+
+                <!-- NAME + CONTACT -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Contact Number *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="contact"
+                            placeholder="Phone number"
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label>
+                        Email *
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="your@email.com"
+                        required>
+
+                </div>
+
+
+                <!-- CONFIDENTIALITY -->
+
+                <div class="confidentiality">
+
+                    <strong>
+                        Confidentiality Notice
+                    </strong>
+
+                    <br>
+
+                    Your submitted information should
+                    be handled confidentially and used
+                    only for cybersecurity investigation
+                    and response purposes.
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    style="width:100%;">
+
+                    Submit Incident Report
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MY REPORTS ================= -->
+
+    <section class="reports-section"
+             id="my-reports">
+
+        <div class="reports-container">
+
+            <h2 style="text-align:center;
+                       margin-bottom:15px;">
+
+                My Submitted Reports
+
+            </h2>
+
+            <p style="text-align:center;
+                      color:#687895;
+                      margin-bottom:40px;">
+
+                Reports saved temporarily
+                in this browser.
+
+            </p>
+
+
+            <div id="reportsList">
+
+                <div class="no-reports">
+
+                    No reports submitted yet.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h2>
+            CyberShield
+        </h2>
+
+        <p>
+            College Cyber Incident Reporting Portal
+        </p>
+
+        <p>
+            Protect • Report • Secure
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 CyberShield. All Rights Reserved.
+        </p>
+
+    </footer>
+</body>
+
+</html> ye pura html code hai
