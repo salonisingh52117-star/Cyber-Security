@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield - Cyber Incident Reporting Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="logo">
+            <strong><span>Cyber</span>Shield</strong>
+        </div>
+
+        <nav>
+            <a href="#home" onclick="showView('home')">Home</a>
+            <a href="#incidents" onclick="showView('home')">Incidents</a>
+            <a href="#threat-checker" onclick="showView('home')">Threat Checker</a>
+            <a href="#report" onclick="showView('home')">Report</a>
+            <a href="#my-reports" onclick="showView('home')">My Reports</a>
+            <a href="#tracking" onclick="showView('tracking')">Ticket Tracking</a>
+            <a href="#admin" onclick="showView('admin')">Admin Dashboard</a>
+            <a href="#analytics" onclick="showView('analytics')">Analytics</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button onclick="showView('auth')" class="login-btn" id="authNavBtn">Login / Sign Up</button>
+        </div>
+    </header>
+
+    <!-- ================= MAIN VIEW CONTAINER ================= -->
+    <div id="mainViewContainer">
+
+        <!-- HOME / HERO -->
+        <!-- ================= HERO ================= -->
+<section id="home" class="hero view-section">
+    <div class="hero-content">
+        <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> KIET Deemed University Campus Security</span>
+        <h2>Protect Your Campus.<br>Report Cyber Incidents.</h2>
+        <p>
+            A secure, encrypted, and centralized platform for students and staff
+            to report cybersecurity incidents and help create a safer digital campus environment.
+        </p>
+        <div class="hero-btn-group">
+            <a class="hero-btn primary-btn" href="#report"><i class="fa-solid fa-triangle-exclamation"></i> Report an Incident</a>
+            <a class="hero-btn secondary-btn" href="#analytics" onclick="showView('analytics')"><i class="fa-solid fa-chart-line"></i> View Live Analytics</a>
+        </div>
+        <p class="hero-footer-note"><i class="fa-solid fa-lock" style="color:#1683ff;"></i> Confidential Reporting &nbsp;|&nbsp; <i class="fa-solid fa-bolt" style="color:#1683ff;"></i> Quick Response Team</p>
+    </div>
+</section>
+
+        <!-- INCIDENT TYPES -->
+        <section class="section view-section" id="incidents">
+            <h2>Common Incident Types</h2>
+            <p class="section-subtitle">Select an incident type before submitting your report.</p>
+            <div class="incident-grid">
+                <div class="incident-card"><h3>Phishing</h3><p>Suspicious emails or messages trying to steal information.</p></div>
+                <div class="incident-card"><h3>Malware</h3><p>Suspicious software or files that may harm a device.</p></div>
+                <div class="incident-card"><h3>Account Hack</h3><p>Unauthorized access to a student or staff account.</p></div>
+                <div class="incident-card"><h3>Suspicious Link</h3><p>A website link that appears unsafe or fraudulent.</p></div>
+                <div class="incident-card"><h3>Data Leakage</h3><p>Unauthorized exposure or sharing of sensitive information.</p></div>
+                <div class="incident-card"><h3>Unauthorized Access</h3><p>Someone accessing a system without permission.</p></div>
+            </div>
+        </section>
+
+        <!-- THREAT CHECKER -->
+        <section class="section threat-checker view-section" id="threat-checker">
+            <h2>Cyber Threat Checker</h2>
+            <p class="section-subtitle">Check suspicious links and emails for common cybersecurity warning signs.</p>
+            <div class="checker-container">
+                <div class="checker-card">
+                    <h3>Suspicious Link Checker</h3>
+                    <p>Enter a suspicious website URL to check for common warning signs.</p>
+                    <input type="text" id="urlInput" placeholder="https://example.com">
+                    <button class="primary-btn" onclick="checkUrl()">Analyze Link</button>
+                    <div id="urlResult" class="checker-result"></div>
+                </div>
+                <div class="checker-card">
+                    <h3>Suspicious Email Checker</h3>
+                    <p>Check an email for common phishing indicators.</p>
+                    <input type="email" id="senderEmail" placeholder="Sender email">
+                    <input type="text" id="emailSubject" placeholder="Email subject">
+                    <textarea id="emailContent" rows="5" placeholder="Paste the email message here..."></textarea>
+                    <button class="primary-btn" onclick="checkEmail()">Analyze Email</button>
+                    <div id="emailResult" class="checker-result"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REPORT FORM -->
+        <section class="report-section view-section" id="report">
+            <div class="report-container">
+                <h2>Report a Cyber Incident</h2>
+                <p class="report-description">Provide accurate information so the security team can investigate the incident.</p>
+                <form id="incidentForm" onsubmit="handleIncidentSubmit(event)">
+                    <div class="form-group">
+                        <label for="incidentType">Incident Type *</label>
+                        <select id="incidentType" required>
+                            <option value="">Select Incident Type</option>
+                            <option>Phishing</option>
+                            <option>Malware</option>
+                            <option>Suspicious Link</option>
+                            <option>Account Hack</option>
+                            <option>Data Leakage</option>
+                            <option>Unauthorized Access</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Incident Description *</label>
+                        <textarea id="description" rows="6" placeholder="Describe what happened..." required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="incidentDate">Date *</label>
+                            <input type="date" id="incidentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="incidentTime">Time *</label>
+                            <input type="time" id="incidentTime" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Severity *</label>
+                        <div class="severity-options">
+                            <label class="severity-option"><input type="radio" name="severity" value="Low" required> Low</label>
+                            <label class="severity-option"><input type="radio" name="severity" value="Medium"> Medium</label>
+                            <label class="severity-option"><input type="radio" name="severity" value="High"> High</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Evidence / Screenshot</label>
+                        <label class="upload-box">
+                            <input type="file" id="evidence" accept="image/*,.pdf,.txt,.doc,.docx" onchange="previewFileName(this)">
+                            <div class="file-name" id="fileName">No file selected</div>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentName">Name *</label>
+                            <input type="text" id="studentName" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">Contact Number *</label>
+                            <input type="tel" id="contact" placeholder="Phone number" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="confidentiality">
+                        <strong>Confidentiality Notice</strong><br>
+                        Your submitted information will be handled confidentially and used only for cybersecurity investigation purposes.
+                    </div>
+                    <button type="submit" class="primary-btn" style="width:100%;">Submit Incident Report</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- MY REPORTS -->
+        <section class="reports-section view-section" id="my-reports">
+            <div class="reports-container">
+                <h2 style="text-align:center; margin-bottom:15px;">My Submitted Reports</h2>
+                <p style="text-align:center; color:#687895; margin-bottom:40px;">Reports saved locally in this browser storage.</p>
+                <div id="reportsList">
+                    <div class="no-reports">No reports submitted yet.</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ================= LOGIN / REGISTRATION VIEW ================= -->
+    <section id="authView" class="view-screen" style="display:none; padding: 60px 20px;">
+        <div class="report-container" style="max-width: 450px;">
+            <div id="loginFormContainer">
+                <h2>User Login</h2>
+                <p class="report-description">Access your portal account</p>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group" style="flex-direction:column; align-items:stretch;">
+                        <label>Email *</label>
+                        <input type="email" id="loginEmail" placeholder="your@email.com" required style="width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:7px;">
+                    </div>
+                    <div class="form-group" style="flex-direction:column; align-items:stretch; margin-top:15px;">
+                        <label>Password *</label>
+                        <input type="password" id="loginPassword" placeholder="********" required style="width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:7px;">
+                    </div>
+                    <button type="submit" class="primary-btn" style="width:100%; margin-top:20px; padding:12px;">Login</button>
+                </form>
+                <p style="text-align:center; margin-top:15px;">Don't have an account? <a href="#" onclick="toggleAuthMode('register')" style="color:#1683ff; font-weight:700;">Sign Up</a></p>
+            </div>
+
+            <div id="registerFormContainer" style="display:none;">
+                <h2>Create Account</h2>
+                <p class="report-description">Register for CyberShield access</p>
+                <form onsubmit="handleRegister(event)">
+                    <div class="form-group" style="flex-direction:column; align-items:stretch;">
+                        <label>Full Name *</label>
+                        <input type="text" id="regName" placeholder="Your name" required style="width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:7px;">
+                    </div>
+                    <div class="form-group" style="flex-direction:column; align-items:stretch; margin-top:15px;">
+                        <label>Email *</label>
+                        <input type="email" id="regEmail" placeholder="your@email.com" required style="width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:7px;">
+                    </div>
+                    <div class="form-group" style="flex-direction:column; align-items:stretch; margin-top:15px;">
+                        <label>Password *</label>
+                        <input type="password" id="regPassword" placeholder="********" required style="width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:7px;">
+                    </div>
+                    <button type="submit" class="primary-btn" style="width:100%; margin-top:20px; padding:12px;">Register</button>
+                </form>
+                <p style="text-align:center; margin-top:15px;">Already have an account? <a href="#" onclick="toggleAuthMode('login')" style="color:#1683ff; font-weight:700;">Login</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TICKET TRACKING VIEW ================= -->
+    <section id="trackingView" class="view-screen" style="display:none; padding: 60px 7%;">
+        <div class="reports-container">
+            <h2>Ticket Tracking</h2>
+            <p style="text-align:center; color:#687895; margin-bottom:30px;">Track incident ticket statuses in real time.</p>
+            <div style="display:flex; gap:10px; margin-bottom:25px; justify-content:center;">
+                <input type="text" id="ticketSearchInput" placeholder="Enter Ticket ID (e.g. CS-1001)..." style="padding:10px; width:300px; border:1px solid #cbd5e1; border-radius:7px;">
+                <button class="primary-btn" onclick="searchTicket()">Search Ticket</button>
+            </div>
+            <div id="ticketTrackingResult">
+                <div class="no-reports">Enter a Ticket ID above or select from your reports.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ADMIN DASHBOARD VIEW ================= -->
+    <section id="adminView" class="view-screen" style="display:none; padding: 60px 7%;">
+        <div class="reports-container" style="max-width:1100px;">
+            <h2>Admin Dashboard</h2>
+            <p style="text-align:center; color:#687895; margin-bottom:30px;">Manage, update, and resolve submitted campus incident reports.</p>
+            <div id="adminTableContainer">
+                <div class="no-reports">No incident reports registered in the system.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ANALYTICS VIEW ================= -->
+    <section id="analyticsView" class="view-screen" style="display:none; padding: 60px 7%;">
+        <div class="reports-container" style="max-width:1000px;">
+            <h2>Incident Analytics & Statistics</h2>
+            <p style="text-align:center; color:#687895; margin-bottom:35px;">Overview metrics of reported security events.</p>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; margin-bottom:35px;">
+                <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #e0e8f3; text-align:center;">
+                    <h3 style="color:#0b4c8c; font-size:32px; margin:0;" id="statTotal">0</h3>
+                    <p style="margin:5px 0 0; color:#64748b;">Total Incidents</p>
+                </div>
+                <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #e0e8f3; text-align:center;">
+                    <h3 style="color:#e11d48; font-size:32px; margin:0;" id="statHigh">0</h3>
+                    <p style="margin:5px 0 0; color:#64748b;">High Severity</p>
+                </div>
+                <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #e0e8f3; text-align:center;">
+                    <h3 style="color:#16a34a; font-size:32px; margin:0;" id="statResolved">0</h3>
+                    <p style="margin:5px 0 0; color:#64748b;">Resolved</p>
+                </div>
+            </div>
+            <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #e0e8f3;">
+                <h3 style="color:#061a42; margin-top:0;">Incident Breakdown by Type</h3>
+                <div id="analyticsBreakdown" style="margin-top:15px; color:#5c6b80;">No data available yet.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <h2>CyberShield</h2>
+        <p>College Cyber Incident Reporting Portal</p>
+        <p>Protect • Report • Secure</p>
+        <p>© 2026 CyberShield. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
